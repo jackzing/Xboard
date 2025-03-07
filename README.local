@@ -1,0 +1,26 @@
+## 本地如何修改发布代码
+
+### 代码发布
+
+1. 提交代码到github上的master分支
+2. 本地创建镜像，使用下面的命令(使用本地的DockerFile), 建议加上版本号
+
+```
+docker build -t="jackzing/xboard:v2" .
+```
+
+3. 修改compose文件，重新拉取镜像，并运行
+
+将compose.yml中文件镜像更新成编译之后的镜像jackzing/xboard:v2
+
+- docker images 
+- docker compose stop 停止服务 # 停止所有容器
+- docker rmi <your-image-id> # 删除镜像
+- docker container rm <container-id> # 删除容器
+- docker ps -a #查看所有的容器
+- docker compose up -d
+
+4. 更新容器中PHP代码
+docker compose stop
+
+docker compose run -it web sh update.sh
