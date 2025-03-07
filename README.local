@@ -23,4 +23,4 @@ docker build -t="jackzing/xboard:v2" .
 4. 更新容器中PHP代码
 docker compose stop
 
-docker compose run -it web sh update.sh
+docker exec -it <container-id> sh update.sh
