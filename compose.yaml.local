@@ -8,7 +8,7 @@ services:
       - ./storage/logs:/www/storage/logs
       - ./storage/theme:/www/storage/theme
       - ./plugins:/www/plugins
-      - ./public:/www/public
+      - ./public/resource:/www/public/assets/resource
     environment:
       - docker=true
     depends_on:
